@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Brilliads Agency</title>
+  <meta name="description" content="Complete advertising and promotional services including printing, distribution, manpower, and event support." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .service-grid-detailed {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .service-item {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .service-item i {
+      color: var(--gold-soft);
+      margin-top: 2px;
+      min-width: 20px;
+    }
+
+    .service-item span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .service-section-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 28px;
+      align-items: start;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      min-height: 380px;
+      background: rgba(255,255,255,0.02);
+      border: 2px dashed var(--line);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 980px) {
+      .service-grid-detailed,
+      .service-section-split {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="../index.html" class="brand" aria-label="Brilliads Agency home">
+          <span class="brand-mark">BA</span>
+          <span class="brand-text">Brilliads Agency</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html" class="active">Services</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="btn btn-outline" href="contact.html">Book a Call</a>
+          <a class="btn btn-primary" href="https://wa.me/919342922026" target="_blank" rel="noreferrer">Get Quote</a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+        <a class="btn btn-primary" href="https://wa.me/919342922026" target="_blank" rel="noreferrer">Get Quote</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero centered">
+        <div class="container">
+          <p class="eyebrow">What We Offer</p>
+          <h1>Complete Advertising & Promotional Solutions</h1>
+          <p>From printing and distribution to on-ground activation and event management, we handle every aspect of your campaign.</p>
+        </div>
+      </section>
+
+      <!-- Printing Services -->
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Printing & Design</p>
+            <h2 id="printing">Print Your Brand Into Visibility</h2>
+          </div>
+
+          <div class="service-section-split">
+            <div>
+              <div class="service-grid-detailed">
+                <div class="service-item">
+                  <i class="fa-solid fa-check"></i>
+                  <span><strong>Sunpack Sheet Printing & Mount</strong> - High-impact visual displays</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-check"></i>
+                  <span><strong>No Parking Board</strong> - Official signage solutions</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-check"></i>
+                  <span><strong>Auto Side & Back Advertisement Printing</strong> - Vehicle branding</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-check"></i>
+                  <span><strong>Paper Insertion Printing</strong> - Direct mail materials</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-check"></i>
+                  <span><strong>Innovative Fold Pamphlet</strong> - Eye-catching brochures</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-check"></i>
+                  <span><strong>Lamp Post 2×2 ft Printing & Mount</strong> - Street-level visibility</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-check"></i>
+                  <span><strong>Poster on Wall Service</strong> - Strategic placement</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-check"></i>
+                  <span><strong>Billboard Banner</strong> - Monthly/daily rates available</span>
+                </div>
+              </div>
+            </div>
+            <div class="image-placeholder">
+              🖼️ Printing Services Image<br><br>(Add your printing samples here)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Distribution Services -->
+      <section class="section dark-panel">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Distribution & Outreach</p>
+            <h2 id="distribution">Reach Your Audience Directly</h2>
+          </div>
+
+          <div class="service-section-split">
+            <div class="image-placeholder">
+              📍 Distribution Services Image<br><br>(Add distribution in-action photos here)
+            </div>
+            <div>
+              <div class="service-grid-detailed">
+                <div class="service-item">
+                  <i class="fa-solid fa-check"></i>
+                  <span><strong>Pamphlet Distribution On-Hand</strong> - Direct handover</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-check"></i>
+                  <span><strong>Door-to-Door Pamphlet Service</strong> - Residential targeting</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-check"></i>
+                  <span><strong>Lead Generation with Target</strong> - Data-driven results</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-check"></i>
+                  <span><strong>Apartment Promotion</strong> - Multi-unit campaigns</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-check"></i>
+                  <span><strong>Survey Work</strong> - Market research execution</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-check"></i>
+                  <span><strong>Data Collection with Target</strong> - Accurate information gathering</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-check"></i>
+                  <span><strong>Visiting Card Collection</strong> - Lead capture</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-check"></i>
+                  <span><strong>Review Collection</strong> - Customer feedback gathering</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Advertising Services -->
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Advertising & Activation</p>
+            <h2 id="advertising">Make Your Brand Impossible to Ignore</h2>
+          </div>
+
+          <div class="service-section-split">
+            <div>
+              <div class="service-grid-detailed">
+                <div class="service-item">
+                  <i class="fa-solid fa-bullhorn"></i>
+                  <span><strong>Mall Promotion</strong> - High-traffic brand exposure</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-bullhorn"></i>
+                  <span><strong>Sampling Work</strong> - With or without canopy, boys & girls</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-bullhorn"></i>
+                  <span><strong>Registration Work</strong> - Event sign-ups & data entry</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-bullhorn"></i>
+                  <span><strong>App Promotion</strong> - Download & user acquisition</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-bullhorn"></i>
+                  <span><strong>Mascot Work</strong> - Brand character activation</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-bullhorn"></i>
+                  <span><strong>Bike Test Ride Promotion</strong> - Product demonstrations</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-bullhorn"></i>
+                  <span><strong>Bike Rally Event</strong> - Large-scale community engagement</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-bullhorn"></i>
+                  <span><strong>Resort Work</strong> - Hospitality promotions</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-bullhorn"></i>
+                  <span><strong>English Known Promotion</strong> - Specialized outreach teams</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-bullhorn"></i>
+                  <span><strong>Game Conducting</strong> - Interactive brand engagement</span>
+                </div>
+              </div>
+            </div>
+            <div class="image-placeholder">
+              🎯 Advertising Services Image<br><br>(Add campaign activation photos here)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Manpower & Event Services -->
+      <section class="section dark-panel">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Manpower & Events</p>
+            <h2 id="manpower">Professional Execution & Support Teams</h2>
+          </div>
+
+          <div class="service-section-split">
+            <div class="image-placeholder">
+              👥 Manpower & Events Image<br><br>(Add team/event photos here)
+            </div>
+            <div>
+              <div class="service-grid-detailed">
+                <div class="service-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span><strong>Catering Boys Only</strong> - Food service support</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span><strong>Temporary Parking Boys</strong> - Valet & parking assistance</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span><strong>Balloon Decoration Works</strong> - Event ambiance setup</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span><strong>Loading & Unloading Boys</strong> - Logistics & material movement</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span><strong>Temporary Volunteer Service</strong> - Event assistance</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span><strong>Packing Work</strong> - Product packaging support</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span><strong>Table & Chair Arrangement</strong> - Venue setup</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span><strong>Supervisor Job</strong> - Event management & coordination</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span><strong>Desk Work</strong> - Registration & information desk</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span><strong>Bouncer Service</strong> - Security & crowd control</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span><strong>Chef Service</strong> - Culinary support</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span><strong>Wedding Decoration</strong> - Specialized event styling</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span><strong>EMC & RJ Work</strong> - Event hosting & entertainment</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span><strong>Inauguration Event Helper</strong> - Ceremony support</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span><strong>Logistic Work</strong> - Supply chain management</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-users"></i>
+                  <span><strong>Temporary Cleaning Work</strong> - Post-event cleanup</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Promotional & Event Services -->
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Specialized Promotions</p>
+            <h2>Customized Campaign Solutions</h2>
+          </div>
+
+          <div class="service-section-split">
+            <div>
+              <div class="service-grid-detailed">
+                <div class="service-item">
+                  <i class="fa-solid fa-sparkles"></i>
+                  <span><strong>Catering Boys Only</strong> - Food & beverage support</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-sparkles"></i>
+                  <span><strong>Event Participation Work</strong> - Any type of event</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-sparkles"></i>
+                  <span><strong>Photography Service</strong> - Professional event coverage</span>
+                </div>
+                <div class="service-item">
+                  <i class="fa-solid fa-sparkles"></i>
+                  <span><strong>Temporary Cleaning Work</strong> - Pre & post-event cleanup</span>
+                </div>
+              </div>
+            </div>
+            <div class="image-placeholder">
+              ✨ Specialized Services Image<br><br>(Add specialized promotion photos here)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-band">
+        <div class="container cta-box">
+          <div>
+            <p class="eyebrow">Ready to Launch?</p>
+            <h2>Let's plan your next campaign</h2>
+          </div>
+          <a class="btn btn-primary" href="contact.html">Get Started</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a href="../index.html" class="brand footer-brand">
+            <span class="brand-mark">BA</span>
+            <span class="brand-text">Brilliads Agency</span>
+          </a>
+          <p>Complete advertising and promotional solutions for brands that want stronger local presence.</p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="https://wa.me/919342922026" target="_blank" rel="noreferrer">+91 93429 22026</a></li>
+            <li><a href="mailto:brilliadsagency@gmail.com">brilliadsagency@gmail.com</a></li>
+            <li>Mannivakkam, Tambaram, Chennai-48</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© 2026 Brilliads Agency. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
