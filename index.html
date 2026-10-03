@@ -1,172 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brilliads Agency | Advertising & Marketing</title>
-    <!-- Tailwind CSS for styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- AOS CSS for advanced scroll animations -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        gold: '#D4AF37',
-                        goldlight: '#F4D03F',
-                        dark: '#111111',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brilliads Agency | Advertising & Marketing</title>
+  <meta name="description" content="Advertising and promotional services by Brilliads Agency." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="font-sans antialiased">
-
-    <!-- Slide Sidebar Menu -->
-    <div id="sidebar" class="sidebar-closed fixed top-0 left-0 h-full w-64 bg-dark border-r border-gold z-50 overflow-y-auto pt-16 pb-10">
-        <button onclick="toggleSidebar()" class="absolute top-4 right-4 text-gold text-2xl"><i class="fas fa-times"></i></button>
-        <ul class="flex flex-col space-y-4 px-6 text-lg">
-            <li><a href="#home" onclick="toggleSidebar()" class="hover:text-gold transition">Home</a></li>
-            <li><a href="#about" onclick="toggleSidebar()" class="hover:text-gold transition">About Us</a></li>
-            <li><a href="pages/portfolio.html" onclick="toggleSidebar()" class="hover:text-gold transition">Portfolio</a></li>
-            <li><a href="#products" onclick="toggleSidebar()" class="hover:text-gold transition">Products & Services</a></li>
-            <li><a href="pages/services.html#printing" onclick="toggleSidebar()" class="text-sm text-gray-400 hover:text-gold transition">- Printing Service</a></li>
-            <li><a href="pages/services.html#advertising" onclick="toggleSidebar()" class="text-sm text-gray-400 hover:text-gold transition">- Advertising Service</a></li>
-            <li><a href="pages/services.html#canopy" onclick="toggleSidebar()" class="text-sm text-gray-400 hover:text-gold transition">- Promotional Canopy & Tents</a></li>
-            <li><a href="pages/services.html#distribution" onclick="toggleSidebar()" class="text-sm text-gray-400 hover:text-gold transition">- Distribution Service</a></li>
-            <li><a href="pages/services.html#manpower" onclick="toggleSidebar()" class="text-sm text-gray-400 hover:text-gold transition">- Manpower Solutions</a></li>
-            <li><a href="pages/contact.html" onclick="toggleSidebar()" class="hover:text-gold transition">Contact Us</a></li>
-        </ul>
-    </div>
-
-    <!-- Header -->
-    <header class="fixed w-full top-0 bg-dark/90 backdrop-blur-md border-b border-gold z-40">
-        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-4">
-                <button onclick="toggleSidebar()" class="text-gold text-2xl"><i class="fas fa-bars"></i></button>
-                <img src="assets/images/logo.png" alt="Brilliads Logo" class="h-12 w-auto rounded-full border-2 border-gold object-cover" onerror="this.src='https://via.placeholder.com/50x50/D4AF37/111111?text=BA'">
-                <h1 class="text-2xl font-bold tracking-wider gold-text uppercase">Brilliads Agency</h1>
-            </div>
-            <a href="https://wa.me/919342922026" target="_blank" class="hidden md:block bg-gold text-dark px-6 py-2 font-bold rounded hover:bg-goldlight transition">Get a Quote</a>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <div class="brand-wrap">
+          <div class="brand-mark">BA</div>
+          <div class="brand-name">Brilliads Agency</div>
         </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#" class="active">Home</a>
+          <a href="#">About</a>
+          <a href="pages/services.html">Services</a>
+          <a href="#">Portfolio</a>
+          <a href="#">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="pages/contact.html" class="btn btn-outline">Book a Call</a>
+          <a href="https://wa.me/919342922026" target="_blank" rel="noreferrer" class="btn btn-primary">Get Quote</a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="pages/services.html">Services</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+        <a href="https://wa.me/919342922026" target="_blank" rel="noreferrer" class="btn btn-primary">Get Quote</a>
+      </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-20 px-4 text-center min-h-screen flex flex-col justify-center items-center" data-aos="fade-up">
-        <h2 class="text-5xl md:text-7xl font-bold mb-6">Activating Brands<br><span class="gold-text">With Impact.</span></h2>
-        <p class="text-xl text-gray-300 max-w-2xl mb-10">Chennai's premier BTL advertising and marketing powerhouse. We connect your brand to the crowd.</p>
-        <a href="#products" class="border-2 border-gold text-gold px-8 py-4 rounded-full text-lg font-bold hover:bg-gold hover:text-dark transition">Explore Our Services</a>
-    </section>
+    <main class="hero-area">
+      <div class="hero-glow"></div>
+    </main>
+  </div>
 
-    <!-- About Us -->
-    <section id="about" class="py-20 px-4 bg-black" data-aos="fade-right">
-        <div class="max-w-4xl mx-auto text-center">
-            <h3 class="text-3xl font-bold gold-text mb-6">About Us</h3>
-            <p class="text-lg text-gray-300 leading-relaxed">
-                Brilliads Agency is the best advertising agency in Chennai, specializing in high-impact outdoor advertising and Below-The-Line (BTL) marketing. Located in Mannivakkam, Tambaram, we transform local brand presence through street-level campaigns, premium promotional setups, and dedicated manpower solutions. Whether it's high-traffic mall activations, targeted residential promotions, or complete event management, we provide end-to-end operational excellence to ensure your brand gets noticed.
-            </p>
-            <a href="pages/about.html" class="inline-block mt-6 text-gold hover:text-goldlight transition font-bold">Learn More →</a>
-        </div>
-    </section>
-
-    <!-- Products & Services Container -->
-    <section id="products" class="py-20 px-4">
-        <div class="max-w-7xl mx-auto">
-            <h3 class="text-4xl font-bold text-center gold-text mb-12" data-aos="zoom-in">Promotional Products & Price List</h3>
-            
-            <!-- Grid for Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- Product Card 1 -->
-                <div class="white-gold-card rounded-xl overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/images/products/product1.jpg" alt="Roll-Up Standee" class="w-full h-48 object-cover bg-gray-200" onerror="this.src='https://via.placeholder.com/400x300/f4d03f/111111?text=Roll-Up+Standee'">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="text-2xl font-bold text-dark mb-2">Roll-Up Standee (6×3 ft)</h4>
-                        <p class="text-lg font-bold text-yellow-600 mb-4">Price: ₹1,500 <span class="text-xs text-gray-500">+ GST</span></p>
-                        
-                        <div class="space-y-3 mb-6 flex-grow text-sm">
-                            <p><strong><i class="fas fa-info-circle gold-text"></i> Description:</strong> Portable, retractable banner stand ideal for indoor and outdoor display.</p>
-                            <p><strong><i class="fas fa-eye gold-text"></i> How it Creates Attention:</strong> Stands tall at eye level, capturing foot traffic instantly with crisp, large-format graphics.</p>
-                            <p class="bg-gray-100 p-2 border-l-4 border-gold"><strong><i class="fas fa-clipboard-list gold-text"></i> Requirement Box:</strong> High-res design file (PDF/Corel), Brand Logo, Tagline.</p>
-                            <p class="italic text-gray-600"><strong><i class="fas fa-star gold-text"></i> Review Box:</strong> "Excellent quality and highly durable for our daily mall promotions." - Recent Client</p>
-                        </div>
-                        
-                        <a href="https://wa.me/919342922026?text=Hi%20Brilliads,%20I%20want%20to%20know%20more%20about%20the%20Roll-Up%20Standee%20(6x3%20ft)" target="_blank" class="w-full text-center bg-dark text-gold font-bold py-3 rounded hover:bg-black transition">Click to Ask Price / Order</a>
-                    </div>
-                </div>
-
-                <!-- Product Card 2 -->
-                <div class="white-gold-card rounded-xl overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/images/products/product2.jpg" alt="Promotional Table" class="w-full h-48 object-cover bg-gray-200" onerror="this.src='https://via.placeholder.com/400x300/f4d03f/111111?text=Promotional+Table'">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="text-2xl font-bold text-dark mb-2">Promotional Table</h4>
-                        <p class="text-lg font-bold text-yellow-600 mb-4">PVC: ₹2,800 | Aluminium: ₹3,300 <span class="text-xs text-gray-500">+ GST</span></p>
-                        
-                        <div class="space-y-3 mb-6 flex-grow text-sm">
-                            <p><strong><i class="fas fa-info-circle gold-text"></i> Description:</strong> Sturdy, branded kiosk desk for sampling and product displays.</p>
-                            <p><strong><i class="fas fa-eye gold-text"></i> How it Creates Attention:</strong> Creates a professional, physical touchpoint for customers to interact with your promoters.</p>
-                            <p class="bg-gray-100 p-2 border-l-4 border-gold"><strong><i class="fas fa-clipboard-list gold-text"></i> Requirement Box:</strong> Front and header branding artwork, product samples to display.</p>
-                            <p class="italic text-gray-600"><strong><i class="fas fa-star gold-text"></i> Review Box:</strong> "The aluminium table is incredibly sturdy and easy to assemble on site."</p>
-                        </div>
-                        
-                        <a href="https://wa.me/919342922026?text=Hi%20Brilliads,%20I%20need%20details%20on%20the%20Promotional%20Table" target="_blank" class="w-full text-center bg-dark text-gold font-bold py-3 rounded hover:bg-black transition">Click to Ask Price / Order</a>
-                    </div>
-                </div>
-
-                <!-- Service Card 1 -->
-                <div class="white-gold-card rounded-xl overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="300">
-                    <img src="assets/images/products/service1.jpg" alt="Pamphlet Distribution" class="w-full h-48 object-cover bg-gray-200" onerror="this.src='https://via.placeholder.com/400x300/f4d03f/111111?text=Distribution+Service'">
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="text-2xl font-bold text-dark mb-2">Pamphlet Distribution & Printing</h4>
-                        <p class="text-lg font-bold text-yellow-600 mb-4">Ask Price on WhatsApp</p>
-                        
-                        <div class="space-y-3 mb-6 flex-grow text-sm">
-                            <p><strong><i class="fas fa-info-circle gold-text"></i> Description:</strong> On-hand and door-to-door direct paper insertion and distribution.</p>
-                            <p><strong><i class="fas fa-eye gold-text"></i> How it Creates Attention:</strong> Puts your message directly into the physical hands of your local target audience.</p>
-                            <p class="bg-gray-100 p-2 border-l-4 border-gold"><strong><i class="fas fa-clipboard-list gold-text"></i> Requirement Box:</strong> Target location pin codes, total quantity, flyer design.</p>
-                            <p class="italic text-gray-600"><strong><i class="fas fa-star gold-text"></i> Review Box:</strong> "Excellent coverage area and honest distribution teams."</p>
-                        </div>
-                        
-                        <a href="https://wa.me/919342922026?text=Hi,%20I%20want%20to%20know%20the%20price%20for%20Pamphlet%20Distribution%20Service" target="_blank" class="w-full text-center bg-dark text-gold font-bold py-3 rounded hover:bg-black transition">Click to Ask Price / Order</a>
-                    </div>
-                </div>
-
-            </div>
-            
-            <div class="mt-12 text-center" data-aos="fade-in">
-                 <p class="text-gray-300 mb-4">We also offer Gazebo Tents (6x6 to 10x20 ft), Canopy Tents, Umbrellas, Sunpack Sheet Mounts, Mascot Boys, Mall Promoters, Bouncers, Event Chefs, Billboard Banners, and 30+ more specialized BTL services!</p>
-                 <a href="https://wa.me/919342922026?text=Hi%20Brilliads,%20can%20you%20send%20me%20your%20full%20service%20catalog?" target="_blank" class="inline-block bg-gold text-dark px-8 py-3 rounded font-bold hover:bg-white hover:text-dark transition">Message Us for Full Catalog & Pricing</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer / Contact -->
-    <footer id="contact" class="bg-black border-t border-gold py-12" data-aos="fade-up">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h3 class="text-3xl font-bold gold-text mb-8">Connect With Us</h3>
-            <div class="flex flex-col md:flex-row justify-center gap-8 mb-8 text-lg">
-                <a href="https://wa.me/919342922026" target="_blank" class="hover:text-gold transition"><i class="fab fa-whatsapp text-green-500 mr-2"></i> +91 9342922026</a>
-                <a href="mailto:brilliadsagency@gmail.com" class="hover:text-gold transition"><i class="fas fa-envelope text-red-500 mr-2"></i> brilliadsagency@gmail.com</a>
-                <a href="https://instagram.com/brilliads_agency" target="_blank" class="hover:text-gold transition"><i class="fab fa-instagram text-pink-500 mr-2"></i> @brilliads_agency</a>
-            </div>
-            <p class="text-gray-400 mb-2"><i class="fas fa-map-marker-alt mr-2 text-gold"></i> Mannivakkam, Tambaram, Chennai-48</p>
-            <p class="text-sm text-gray-600 mt-8">© 2026 Brilliads Agency. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
