@@ -1,0 +1,138 @@
+/* Responsive Design */
+
+/* Tablets and Small Screens */
+@media screen and (max-width: 768px) {
+    /* Header */
+    header .text-2xl {
+        font-size: 1.25rem;
+    }
+
+    /* Hero Section */
+    #home h2 {
+        font-size: 2.5rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+    }
+
+    /* Sidebar */
+    #sidebar {
+        width: 100%;
+    }
+
+    /* Grid Layout */
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Screens */
+@media screen and (max-width: 480px) {
+    /* Header */
+    header {
+        padding: 10px 0;
+    }
+
+    header h1 {
+        font-size: 1rem;
+        display: none;
+    }
+
+    /* Hero Section */
+    #home {
+        padding-top: 80px;
+        min-height: auto;
+        padding-bottom: 40px;
+    }
+
+    #home h2 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    #home p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    /* Product Cards */
+    .white-gold-card {
+        border: 1px solid #D4AF37;
+    }
+
+    .white-gold-card h4 {
+        font-size: 1.5rem;
+    }
+
+    .white-gold-card p {
+        font-size: 0.85rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 20px 10px;
+    }
+
+    footer h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    footer .flex {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    footer a {
+        font-size: 0.9rem;
+    }
+
+    /* Sections */
+    section {
+        padding: 30px 15px;
+    }
+
+    section h3 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Large Desktop Screens */
+@media screen and (min-width: 1920px) {
+    .max-w-7xl {
+        max-width: 1536px;
+    }
+
+    #home h2 {
+        font-size: 5rem;
+    }
+
+    section h3 {
+        font-size: 3.5rem;
+    }
+}
+
+/* Landscape Mode */
+@media (orientation: landscape) and (max-height: 600px) {
+    #home {
+        min-height: auto;
+        padding: 20px 4px;
+    }
+
+    #home h2 {
+        font-size: 1.75rem;
+    }
+
+    #home p {
+        font-size: 0.85rem;
+    }
+}
+
+/* High DPI Screens (Retina) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
