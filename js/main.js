@@ -1,66 +1,35 @@
-/**
- * Main JavaScript functionality for Brilliads Agency Website
- * Handles navigation, sidebar toggle, and general interactions
- */
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
 
-// Sidebar Toggle Logic
-function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    if (!sidebar) return;
-    
-    if (sidebar.classList.contains('sidebar-closed')) {
-        sidebar.classList.remove('sidebar-closed');
-        sidebar.classList.add('sidebar-open');
-    } else {
-        sidebar.classList.remove('sidebar-open');
-        sidebar.classList.add('sidebar-closed');
-    }
-}
-
-// Close sidebar when clicking outside
-document.addEventListener('click', function(event) {
-    const sidebar = document.getElementById('sidebar');
-    const toggleBtn = document.querySelector('.fa-bars');
-    
-    if (sidebar && toggleBtn) {
-        if (!sidebar.contains(event.target) && !toggleBtn.parentElement.contains(event.target)) {
-            if (sidebar.classList.contains('sidebar-open')) {
-                sidebar.classList.remove('sidebar-open');
-                sidebar.classList.add('sidebar-closed');
-            }
-        }
-    }
-});
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href !== '#') {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.style.display === 'flex';
+      mobileMenu.style.display = isOpen ? 'none' : 'flex';
     });
+  }
+
+  const contactForm = document.getElementById('contactForm');
+  const successMessage = document.getElementById('successMessage');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(contactForm);
+      const name = formData.get('name')?.toString().trim() || 'Client';
+      const service = formData.get('service')?.toString().trim() || 'General Inquiry';
+      const message = formData.get('message')?.toString().trim() || 'Hello Brilliads Agency';
+
+      const text = `Hi Brilliads Agency,%0A%0AName: ${encodeURIComponent(name)}%0AService: ${encodeURIComponent(service)}%0A%0AMessage:%0A${encodeURIComponent(message)}`;
+
+      if (successMessage) {
+        successMessage.style.display = 'block';
+        successMessage.textContent = 'Thank you! Your inquiry has been prepared. Please send it on WhatsApp to continue.';
+      }
+
+      window.open(`https://wa.me/919342922026?text=${text}`, '_blank');
+      contactForm.reset();
+    });
+  }
 });
-
-// Header scroll effect
-let lastScroll = 0;
-const header = document.querySelector('header');
-
-window.addEventListener('scroll', () => {
-    if (!header) return;
-    
-    lastScroll = window.scrollY;
-    
-    if (lastScroll > 100) {
-        header.style.boxShadow = '0 4px 15px rgba(212, 175, 55, 0.2)';
-    } else {
-        header.style.boxShadow = 'none';
-    }
-});
-
-// Log initialization
-console.log('✓ Brilliads Agency Website - Main Script Loaded');
