@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Menu toggle for mobile
   const menuToggle = document.getElementById('menuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
 
@@ -9,6 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (event) => {
+    if (mobileMenu && menuToggle) {
+      if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+        mobileMenu.style.display = 'none';
+      }
+    }
+  });
+
+  // Close mobile menu when clicking a link
+  const mobileLinks = mobileMenu?.querySelectorAll('a');
+  mobileLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      if (mobileMenu) mobileMenu.style.display = 'none';
+    });
+  });
+
+  // Contact form submission
   const contactForm = document.getElementById('contactForm');
   const successMessage = document.getElementById('successMessage');
 
@@ -25,11 +44,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (successMessage) {
         successMessage.style.display = 'block';
-        successMessage.textContent = 'Thank you! Your inquiry has been prepared. Please send it on WhatsApp to continue.';
+        successMessage.textContent = '✓ Thank you! Redirecting to WhatsApp...';
       }
 
-      window.open(`https://wa.me/919342922026?text=${text}`, '_blank');
-      contactForm.reset();
+      setTimeout(() => {
+        window.open(`https://wa.me/919342922026?text=${text}`, '_blank');
+        contactForm.reset();
+        if (successMessage) {
+          successMessage.style.display = 'none';
+        }
+      }, 1000);
     });
   }
+
+  // Navigation active state
+  const navLinks = document.querySelectorAll('.main-nav a');
+  navLinks.forEach(link => {
+    if (link.href === window.location.href) {
+      link.classList.add('active');
+    }
+  });
+
+  console.log('✓ Brilliads Agency - All scripts loaded');
 });
