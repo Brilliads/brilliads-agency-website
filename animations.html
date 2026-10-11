@@ -1,0 +1,91 @@
+<!-- ===== BRILLIADS ADD-ON ANIMATIONS: paste this just above </body> ===== -->
+<style>
+@keyframes up{from{opacity:0;transform:translateY(36px) scale(.96)}}
+@keyframes sh{to{background-position:-200% 0}}
+@keyframes sw{0%,55%{left:-60%}100%{left:140%}}
+@keyframes dr{to{transform:translate(60px,-40px) scale(1.25)}}
+@keyframes fl{50%{translate:0 -6px}}
+@keyframes pl{to{transform:scale(1.7);opacity:0}}
+@keyframes bk{50%{opacity:0}}
+@keyframes lg{50%{box-shadow:0 0 0 7px #e8c76a40}}
+@keyframes fi{from{opacity:0}}
+/* scroll reveal */
+.r0{opacity:0}
+.r0.in{opacity:1;animation:up .8s cubic-bezier(.2,.7,.2,1) var(--d,0s) backwards}
+h2.r0:after{width:0;transition:width .9s ease .35s}
+h2.r0.in:after{width:60px}
+.cr i.r0.in{animation:up .8s cubic-bezier(.2,.7,.2,1) var(--d,0s) backwards,fl 4s ease-in-out 1s infinite}
+/* top bar, nav, logo */
+#pb{position:fixed;top:0;left:0;width:100%;height:3px;z-index:20;background:linear-gradient(90deg,#b8891f,#f6dc8c);transform-origin:0 50%;transform:scaleX(0)}
+nav,nav .w{transition:height .3s,box-shadow .3s}
+nav.s{box-shadow:0 6px 20px #b8891f30}
+nav.s .w{height:54px}
+nav img{animation:lg 3s ease-in-out infinite}
+/* hero */
+h1 span{background:linear-gradient(90deg,#b8891f,#f6dc8c,#b8891f);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 3.5s linear infinite}
+#tw{font-weight:700;font-size:clamp(18px,4vw,24px);color:#b8891f;margin-top:10px;min-height:1.6em}
+#tw:after{content:"|";margin-left:2px;animation:bk 1s steps(1) infinite}
+.hero{position:relative;overflow:hidden}
+.hero .w{position:relative;z-index:1}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none;background:radial-gradient(circle,#e8c76a66,transparent 70%);animation:dr 14s ease-in-out infinite alternate}
+.hero:before{width:320px;height:320px;left:-110px;top:30px}
+.hero:after{width:260px;height:260px;right:-70px;bottom:-70px;animation-duration:18s}
+/* buttons */
+.btn{position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 22px #b8891f55}
+.btn:active{transform:scale(.96)}
+.btn:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,#fff9,transparent);transform:skewX(-20deg);animation:sw 3.2s infinite}
+/* sections */
+section{position:relative;overflow:hidden}
+section>.w{position:relative;z-index:1}
+section:before{content:"";position:absolute;width:300px;height:300px;right:-90px;top:-70px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,#e8c76a40,transparent 70%);animation:dr 16s ease-in-out infinite alternate}
+.cd em{display:inline-block;transition:transform .3s}
+.cd:hover em{transform:scale(1.25) rotate(-8deg)}
+.cd span{transition:letter-spacing .3s}
+.cd:hover span{letter-spacing:.6px}
+.ct a,.ct div{transition:transform .25s,box-shadow .25s,border-color .25s}
+.ct a:hover{transform:translateY(-5px);box-shadow:0 12px 26px #b8891f30;border-color:#e8c76a}
+/* floating whatsapp, footer, popup */
+.wa{transition:transform .2s}
+.wa:hover{transform:scale(1.1)}
+.wa:before{content:"";position:absolute;inset:0;border-radius:50%;background:#25d366;z-index:-1;animation:pl 2s ease-out infinite}
+footer{position:relative}
+footer:before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,#e8c76a,transparent);background-size:200% 100%;animation:sh 4s linear infinite}
+dialog[open]{animation:up .4s cubic-bezier(.2,.8,.2,1)}
+dialog[open]::backdrop{animation:fi .3s}
+#mb>*{animation:up .5s cubic-bezier(.2,.7,.2,1) backwards}
+@media(prefers-reduced-motion:reduce){*,:before,:after{animation:none!important;transition:none!important}.r0{opacity:1}}
+</style>
+<script>
+(()=>{
+if(matchMedia("(prefers-reduced-motion:reduce)").matches||!("IntersectionObserver" in window))return;
+const $=id=>document.getElementById(id);
+/* typing line under the heading */
+const tw=document.createElement("div");tw.id="tw";document.querySelector(".hero h1").after(tw);
+const ws=["Outdoor Advertising","Pamphlet Distribution","Promotional Manpower","Event Staff & Mascots","SEO & Digital Marketing"];
+let wi=0,ci=0,dl=0;
+(function t(){const w=ws[wi];ci+=dl?-1:1;tw.textContent=w.slice(0,ci);let d=dl?35:70;
+if(!dl&&ci==w.length){dl=1;d=1400}else if(dl&&ci==0){dl=0;wi=(wi+1)%ws.length;d=350}setTimeout(t,d)})();
+/* reveal on scroll, with a small stagger */
+const Q=".hero h1,#tw,.hero p,.hero .row,.cr i,#c,h2,.sub,.ch,.cd,.rc,.ab p,.ct>*";
+const io=new IntersectionObserver(es=>{es.filter(e=>e.isIntersecting).forEach((e,i)=>{
+e.target.style.setProperty("--d",Math.min(i,8)*.08+"s");e.target.classList.add("in");io.unobserve(e.target)})},{threshold:.1,rootMargin:"0px 0px -30px 0px"});
+const arm=()=>document.querySelectorAll(Q).forEach(x=>{if(!x.classList.contains("r0")&&!x.closest("dialog")){x.classList.add("r0");io.observe(x)}});
+arm();
+["gr","rv"].forEach(i=>new MutationObserver(arm).observe($(i),{childList:true}));
+/* popup content slides in one by one */
+new MutationObserver(()=>[...$("mb").children].forEach((c,i)=>c.style.animationDelay=i*.06+"s")).observe($("mb"),{childList:true});
+/* scroll bar, nav shadow, hero parallax */
+const pb=document.createElement("div");pb.id="pb";document.body.appendChild(pb);
+const nv=document.querySelector("nav"),cv=$("c");let tk=0;
+addEventListener("scroll",()=>{if(tk)return;tk=requestAnimationFrame(()=>{tk=0;
+const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+pb.style.transform="scaleX("+(h>0?y/h:0)+")";nv.classList.toggle("s",y>20);cv.style.translate="0 "+Math.min(y*.12,60)+"px"})},{passive:true});
+/* 3D tilt on service cards (mouse devices only) */
+if(matchMedia("(hover:hover)").matches){let lt;
+addEventListener("pointermove",e=>{const c=e.target.closest&&e.target.closest("#gr .cd");
+if(lt&&lt!==c){lt.style.transform="";lt=null}
+if(!c)return;lt=c;const b=c.getBoundingClientRect(),x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5;
+c.style.transform="perspective(700px) rotateX("+(-y*10)+"deg) rotateY("+(x*10)+"deg) translateY(-4px)"})}
+})();
+</script>
